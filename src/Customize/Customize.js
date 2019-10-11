@@ -1,5 +1,5 @@
 import React, {component} from 'react';
-import Features from './Features/Features'
+import FeaturesList from './FeaturesList/FeaturesList'
 
 class Customize extends component { 
   render(){
@@ -9,7 +9,7 @@ class Customize extends component {
         <h2>Customize your laptop</h2>
       </div>
       <div>
-        <Features
+        <FeaturesList
           features={this.props.features}/>
       </div> 
     </form>

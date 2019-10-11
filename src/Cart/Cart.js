@@ -1,6 +1,6 @@
 import React, {component} from 'react';
 import Specifications from '../Specifications/Specifications';
-import Total from '../Total/Total'
+import Total from './Total/Total'
 
 class Cart extends component {
   render(){
