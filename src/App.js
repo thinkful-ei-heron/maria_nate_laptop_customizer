@@ -6,10 +6,10 @@ import FeaturesList from './FeaturesList/FeaturesList';
     console.log('here in the app');
 
 
-  const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'USD'
-});
+//   const USCurrencyFormat = new Intl.NumberFormat('en-US', {
+//   style: 'currency',
+//   currency: 'USD'
+// });
 
 
 class App extends React.Component {
@@ -43,7 +43,7 @@ class App extends React.Component {
     this.setState({
       selected
     });
-  };
+  }
 
   render() {
 
@@ -58,11 +58,10 @@ class App extends React.Component {
             currency={USCurrencyFormat}/>  
           <Cart
             specifications={this.state.specifications}
-            total={this.state.total}
+            selected={this.state.selected}
           />
           <FeaturesList currency={USCurrencyFormat} 
-          features = {this.props.features} 
-          state = {this.state} 
+          features = {this.props.features}
           updateFeature = {this.updateFeature} />
         </main>
 
