@@ -4,7 +4,7 @@ import './App.css';
 import Customize from './Customize/Customize';
 import Cart from './Cart/Cart'
 
-
+console.log('here in the app');
 
 
 

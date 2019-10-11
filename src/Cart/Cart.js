@@ -2,6 +2,7 @@ import React, {component} from 'react';
 import Specifications from '../Specifications/Specifications';
 import Total from '../Total'
 
+console.log('here in the cart');
 class Cart extends component {
   render(){
   return(
