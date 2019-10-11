@@ -1,5 +1,5 @@
 import React, {component} from 'react';
-import FeaturesList from './FeaturesList/FeaturesList'
+import FeaturesList from '../FeaturesList/FeaturesList'
 
 class Customize extends component { 
   render(){
@@ -16,6 +16,7 @@ class Customize extends component {
 
   )
   }
+ 
 }
 
-export default Customize 
+export default Customize;

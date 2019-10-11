@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-class Features extends Component { 
+class FeaturesList extends Component { 
     render(){
       return 
     }
   }
   
-  export default FeaturesList
+  export default FeaturesList;
