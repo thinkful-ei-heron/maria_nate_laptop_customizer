@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
-import slugify from 'slugify';
+import React from 'react';
 import './App.css';
 import Customize from './Customize/Customize';
 import Cart from './Cart/Cart'
+import FeaturesList from './FeaturesList/FeaturesList';
+    console.log('here in the app');
 
-console.log('here in the app');
 
-const USCurrencyFormat = new Intl.NumberFormat('en-US', {
+  const USCurrencyFormat = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD'
 });
 
 
-
-
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -47,8 +45,6 @@ class App extends Component {
     });
   };
 
-
-
   render() {
 
     return (
@@ -62,7 +58,12 @@ class App extends Component {
             currency={USCurrencyFormat}/>  
           <Cart
             specifications={this.state.specifications}
-            total={this.state.total}/>
+            total={this.state.total}
+          />
+          <FeaturesList currency={USCurrencyFormat} 
+          features = {this.props.features} 
+          state = {this.state} 
+          updateFeature = {this.updateFeature} />
         </main>
 
       </div>
