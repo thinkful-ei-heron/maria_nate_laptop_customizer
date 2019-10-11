@@ -1,7 +1,7 @@
-import React, {component} from 'react';
+import React from 'react';
 import FeaturesList from '../FeaturesList/FeaturesList'
 
-class Customize extends component { 
+class Customize extends React.Component { 
   render(){
     return (
     <form className="main__form">

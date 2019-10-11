@@ -1,9 +1,9 @@
-import React, {component} from 'react';
+import React from 'react';
 import Specifications from '../Specifications/Specifications';
 import Total from '../Total'
 
 console.log('here in the cart');
-class Cart extends component {
+class Cart extends React.Component {
   render(){
   return(
     <section className="main__summary">
@@ -15,7 +15,7 @@ class Cart extends component {
             itemsAdded={this.props.summary}/>
 
         <Total
-            totalCost={this.USCurrencyFormat.format(total)}
+            // totalCost={this.USCurrencyFormat.format(total)}
         />
       </div>
     

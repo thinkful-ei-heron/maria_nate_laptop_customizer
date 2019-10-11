@@ -1,15 +1,18 @@
-import React, { Component } from 'react';
-import slugify from 'slugify';
+import React from 'react';
 import './App.css';
 import Customize from './Customize/Customize';
 import Cart from './Cart/Cart'
-
-console.log('here in the app');
-
-
+import FeaturesList from './FeaturesList/FeaturesList';
+    console.log('here in the app');
 
 
-class App extends Component {
+  const USCurrencyFormat = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD'
+});
+
+
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,9 +37,16 @@ class App extends Component {
     };
   }
   
-
+  updateFeature = (feature, newValue) => {
+    const selected = Object.assign({}, this.state.selected);
+    selected[feature] = newValue;
+    this.setState({
+      selected
+    });
+  };
 
   render() {
+
     return (
       <div className="App">
         <header>
@@ -49,6 +59,10 @@ class App extends Component {
             specifications={this.state.specifications}
             total={this.state.total}
           />
+          <FeaturesList currency={USCurrencyFormat} 
+          features = {this.props.features} 
+          state = {this.state} 
+          updateFeature = {this.updateFeature} />
         </main>
 
       </div>

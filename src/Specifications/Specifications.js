@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Cart from '../Cart/Cart';
 
-class Specifications extends Component {
+class Specifications extends React.Component {
     render() {
       return 
     }
   }
   
-  export default Cart;
+  export default Specifications;
