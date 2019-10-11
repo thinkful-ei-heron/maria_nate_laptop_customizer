@@ -6,6 +6,11 @@ import Cart from './Cart/Cart'
 
 console.log('here in the app');
 
+const USCurrencyFormat = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD'
+});
+
 
 
 
@@ -31,12 +36,21 @@ class App extends Component {
           cost: 1500
         }
       }
-    };
-  }
+  };
   
+  
+  updateFeature = (feature, newValue) => {
+    const selected = Object.assign({}, this.state.selected);
+    selected[feature] = newValue;
+    this.setState({
+      selected
+    });
+  };
+
 
 
   render() {
+
     return (
       <div className="App">
         <header>
@@ -44,15 +58,15 @@ class App extends Component {
         </header>
         <main>
           <Customize
-          />
+            features={this.props.features}
+            currency={USCurrencyFormat}/>  
           <Cart
             specifications={this.state.specifications}
-            total={this.state.total}
-          />
+            total={this.state.total}/>
         </main>
 
       </div>
-    );
+    )
   }
 }
 
