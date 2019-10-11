@@ -1,18 +1,17 @@
-import React from 'react';
+import React, {Component}from 'react';
 import './App.css';
 import Customize from './Customize/Customize';
 import Cart from './Cart/Cart'
-import FeaturesList from './FeaturesList/FeaturesList';
     console.log('here in the app');
 
 
-//   const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-//   style: 'currency',
-//   currency: 'USD'
-// });
+  const USCurrencyFormat = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD'
+});
 
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -34,7 +33,8 @@ class App extends React.Component {
           cost: 1500
         }
       }
-  };
+    }
+  }
   
   
   updateFeature = (feature, newValue) => {
@@ -55,14 +55,16 @@ class App extends React.Component {
         <main>
           <Customize
             features={this.props.features}
-            currency={USCurrencyFormat}/>  
+            selected={this.state.selected}
+            Update={this.state.UpdateFeature} 
+            currency={USCurrencyFormat}
+            />  
           <Cart
             specifications={this.state.specifications}
             selected={this.state.selected}
+            currency={USCurrencyFormat}
+
           />
-          <FeaturesList currency={USCurrencyFormat} 
-          features = {this.props.features}
-          updateFeature = {this.updateFeature} />
         </main>
 
       </div>

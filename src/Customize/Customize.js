@@ -9,13 +9,14 @@ class Customize extends React.Component {
         <h2>Customize your laptop</h2>
       </div>
       <div>
-        <FeaturesList
-          features={this.props.features}/>
+        <FeaturesList 
+          features = {this.props.features}
+          updateFeature = {this.updateFeature} />
       </div> 
     </form>
 
   )
-  }
+  } 
  
 }
 
